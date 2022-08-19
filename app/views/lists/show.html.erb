@@ -1,0 +1,25 @@
+<h1 class = "text-center" ><%= @list.name%></h1>
+
+<div class = "container">
+  <div class = "row">
+    <% @list.movies.each do |movie|%>
+      <div class = "card col-4 m-2 p-0">
+        <div class = "card_box">
+          <%=image_tag("https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: "card_photo")%>
+        </div>
+        <div class = "card-body">
+          <h5><%= movie.title%></h5>
+          <strong>Rating: <%=movie.rating%></strong>
+            <div class ="card_text"><%= movie.overview%></div>
+        </div>
+        </div>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+     <%= button_to "delete this movie", bookmark_path(bookmark), method: :delete, class: "button_submit" %>
+    <%end%>
+  
+    
+
+<%=link_to "Add a movie to this list", new_list_bookmark_path(@list) %>
+<br>
+<%= button_to "Delete This List", {
+  action: "destroy"}, method: :delete, data:{confirm: "Are you sure?"}, class: "button_submit"%>
