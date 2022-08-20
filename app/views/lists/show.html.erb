@@ -9,7 +9,7 @@
 <div class = "container">
   <div class = "row justify-content-evenly">
     <% @list.movies.each do |movie|%>
-      <div class = "card col-3 p-0">
+      <div class = "card col-lg-3 col-sm-12 p-0">
         <div class = "card_box">
           <%=image_tag("https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: "card_photo")%>
         </div>
