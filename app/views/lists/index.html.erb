@@ -11,7 +11,7 @@
   <div><h2>Your Lists</h2></div>
   <div><%=link_to "Create a New List", new_list_path, class: "button"%></div>
 </div>
-<div>
+<div class>
   <%@lists.each do |list|%>
       <% unless list.movies[0].nil?%>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.tmdb.org/t/p/w500<%=list.movies[0].poster_url%>)">

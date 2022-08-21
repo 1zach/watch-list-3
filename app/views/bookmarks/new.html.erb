@@ -5,7 +5,7 @@
     <div class = "row d-flex justify-content-center">
         <div class = "col-5">
     <%= simple_form_for([@list, @bookmark]) do |f|%>
-        <%=f.association :movie, prompt: "Add a movie", collection: Movie.all, input_html: {id: "select-beast"}, as: :string%>
+        <%=f.association :movie, prompt: "Add a movie", collection: Movie.all, input_html: {id: "tom_select"} %>
         <%=f.input :comment%>
         <%=f.submit%>
     <%end%>

@@ -1,8 +1,8 @@
 
 
 <% @list.movies.each do |movie|%>
-          <div class = "card col-lg-3 col-sm-12 p-0 m-1">
-            <div class = "card_box">
+          <div class = "card col-lg-3 col-sm-12 p-0 m-0" id = "<%=@sortable_id%>">
+            <div class = "card_box" id = "<%=movie.sort%>">
               <%=image_tag("https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: "card_photo")%>
             </div>
             <div class = "card-body">

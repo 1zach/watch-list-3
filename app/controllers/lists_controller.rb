@@ -1,4 +1,7 @@
+
+
 class ListsController < ApplicationController
+    
     def index
         @lists = List.all
     end
@@ -6,6 +9,9 @@ class ListsController < ApplicationController
     def show
         @bookmark = Bookmark.new
         @list = List.find(params[:id])
+        @sortable_id = @list.movies.each do |movie|
+            movie.sort
+        end
     end
 
     def edit

@@ -1,7 +1,7 @@
 
  <%= simple_form_for([@list, @bookmark]) do |f| %>
         <div class="modal-body bg-white py-3 px-2 mx-3 rounded position-sticky">
-          <%= f.association :movie, prompt: "Add a movie", collection: Movie.all, input_html: {id: "select-beast"}, as: :string%>
+          <%= f.association :movie, prompt: "Add a movie", collection: Movie.all, input_html: { data: { controller: "tom_select" }}%>
           <%= f.input :comment, placeholder: "Enter a comment"%>
         <div class="modal-footer">
           <%= f.submit "Add movie", class: "btn button_add_movie" %>

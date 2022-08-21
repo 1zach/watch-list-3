@@ -1,11 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
-import TomSelect from "tom-select"
 
+// Connects to data-controller="sortable"
 export default class extends Controller {
   connect() {
-    new TomSelect(this.element, {})
-    
+    ('.sortable').railsSortable();
+};
   }
 
-  
-}
