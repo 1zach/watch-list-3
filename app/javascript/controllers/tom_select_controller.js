@@ -3,6 +3,17 @@ import "tom-select"
 
 export default class extends Controller {
   connect() {
-    new TomSelect(this.element)
+    
   }
+
+  onFocus() {
+    new TomSelect("#select-beast",{
+      persist: false,
+      createOnBlur: true,
+      create: true
+    });
+
+  }
+
+  
 }

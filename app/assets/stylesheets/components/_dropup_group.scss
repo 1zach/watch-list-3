@@ -1,0 +1,15 @@
+.dropup_group {
+    position: absolute;
+    font-weight:normal;
+      font-size: 16px;
+      align-self: flex-end;
+      display: inline-block;
+      white-space: unset;
+      color: white;
+      border:none;
+      
+}
+
+.dropdown-toggle:after {
+    border:none !important;
+}

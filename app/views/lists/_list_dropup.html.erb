@@ -1,0 +1,11 @@
+<div class="btn-group dropup dropup_group">
+            <button type="button" class="btn movie_count dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%=pluralize(list.movie_ids.size, "Movie")%>
+            </button>
+          <div class="dropdown-menu">
+            <%list.movies.each do |movie|%>
+            <p class="dropdown-item"><%=movie.title%></p>
+            <%end%>
+        </div>
+ </div>
+      
