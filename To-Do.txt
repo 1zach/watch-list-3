@@ -1,0 +1,4 @@
+Tom-Select not working
+Add a movie not sticky
+Card movie count on 2 lines instead of 1
+Lists page has weird layout issues

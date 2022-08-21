@@ -1,30 +1,22 @@
-<div class = "text-center mt-3">
-<h1 class = "text-center" ><%= @list.name%></h1>
-<div class = "buttons">
-<%=link_to "Add movie", new_list_bookmark_path(@list), class: "button_add_movie my-3" %> 
-<%= button_to "Delete This List", {
-  action: "destroy"}, method: :delete, data:{confirm: "Are you sure?"}, class: "button_submit my-3"%>
-</div>
-
 <div class = "container">
-  <div class = "row justify-content-evenly">
-    <% @list.movies.each do |movie|%>
-      <div class = "card col-lg-3 col-sm-12 p-0">
-        <div class = "card_box">
-          <%=image_tag("https://image.tmdb.org/t/p/w500#{movie.poster_url}", class: "card_photo")%>
-        </div>
-        <div class = "card-body">
-          <h5><%= movie.title%></h5>
-          <strong>Rating: <%=movie.rating%></strong>
-            <div class ="card_text"><%= movie.overview%></div>
-        </div>
-        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-     <%= button_to "remove from list", bookmark_path(bookmark), method: :delete, class: "button_submit" %>
-        </div>
-        
-    
-    <%end%>
+  <h1 class = "text-center py-2" ><%= @list.name%></h1>
+    <div class = "row container-body justify-center">
+      <div class = "card-container row col-lg-9 col-sm-12 mx-0 px-0">
+      
+        <%=render "card", list: @list%>
+      </div>
+      <div class = "add-movie-container col-lg-3 align-self-start px-1">
+        <%= render "bookmarks/modal", list: @list, bookmark: @bookmark %>
+        <%= button_to "Delete This List", {
+  action: "destroy"}, method: :delete, data:{confirm: "Are you sure?"}, class: "button_submit m-3"%>
+</div>
+      </div>
     </div>
-  
-    
+  </div>
 
+    
+  
+ 
+
+
+      

@@ -1,10 +1,10 @@
 
 .button_submit {
     border: none;
-    background-color: black;
-    color: white;
+    background: transparent;
+    color: rgb(150, 150, 150);
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .button_add_movie {
@@ -26,3 +26,4 @@
 .buttons {
     display: inline-block;
 }
+
